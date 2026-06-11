@@ -171,5 +171,17 @@ streamlit run streamlit_app.py
 - Performance optimization
 
 ---
+## Screenshots
 
+### Mask Detection Result 1
+
+![Mask Detection Result 1](screenshots/mask_detection_result%20(1).jpg)
+
+### Mask Detection Result 2
+
+![Mask Detection Result 2](screenshots/mask_detection_result%20(2).jpg)
+
+### Mask Detection Result 3
+
+![Mask Detection Result 3](screenshots/mask_detection_result%20(3).jpg)
 
