@@ -172,16 +172,4 @@ streamlit run streamlit_app.py
 
 ---
 
-## Author
 
-**Abinav A D**
-
-B.Tech Computer Science Engineering Student
-
-GitHub: https://github.com/abinavdev
-
----
-
-## License
-
-This project is intended for educational, learning, and portfolio purposes.
