@@ -1,10 +1,16 @@
 # Face Mask Detection System
 
-A deep learning-based Face Mask Detection application that identifies whether a person is wearing a face mask from an uploaded image. The application uses OpenCV for face detection, TensorFlow/Keras for classification, and Streamlit for deployment.
+A deep learning-based Face Mask Detection application that identifies whether a person is wearing a face mask using both uploaded images and real-time webcam streams. The project uses OpenCV for face detection, TensorFlow/Keras for classification, and Streamlit for deployment.
 
-## Live Demo
+## Live Applications
+
+### Image Upload Detection
 
 https://face-mask-detection-sobtc646yq4rrjkvevpax5.streamlit.app/
+
+### Live Webcam Detection
+
+https://face-mask-detection-fvfhn49dmxaytbdouwujzg.streamlit.app/
 
 ## Repository
 
@@ -14,23 +20,39 @@ https://github.com/abinavdev/face-mask-detection
 
 ## Overview
 
-This project combines computer vision and deep learning techniques to detect faces in an image and classify each detected face as either:
+This project combines computer vision and deep learning techniques to detect faces and classify each detected face as either:
 
-- Mask
-- No Mask
+* Mask
+* No Mask
 
-The application supports both single-face and multi-face detection and provides prediction confidence scores for each detected face.
+The system supports both:
+
+* Image Upload Detection
+* Real-Time Webcam Detection
+
+It can detect multiple faces simultaneously and provides confidence scores for every prediction.
 
 ---
 
 ## Features
 
-- Face detection using OpenCV DNN
-- Face mask classification using a trained MobileNetV2 model
-- Multiple face detection in a single image
-- Confidence score display
-- Streamlit-based web interface
-- Public cloud deployment
+### Image Upload Detection
+
+* Upload image files for analysis
+* Face detection using OpenCV DNN
+* Mask / No Mask classification
+* Multiple face detection support
+* Confidence score display
+* Download processed image
+
+### Live Webcam Detection
+
+* Browser webcam access
+* Real-time face detection
+* Real-time mask classification
+* Confidence score display
+* Multiple face detection support
+* Streamlit WebRTC integration
 
 ---
 
@@ -38,40 +60,54 @@ The application supports both single-face and multi-face detection and provides 
 
 ### Programming Language
 
-- Python
+* Python
 
 ### Machine Learning
 
-- TensorFlow
-- Keras
-- MobileNetV2
+* TensorFlow
+* Keras
+* MobileNetV2
 
 ### Computer Vision
 
-- OpenCV
+* OpenCV
+* OpenCV DNN Face Detector
 
 ### Web Application
 
-- Streamlit
+* Streamlit
+* Streamlit WebRTC
 
 ### Supporting Libraries
 
-- NumPy
-- Pillow
-- Imutils
+* NumPy
+* Pillow
+* Imutils
+* AV
 
 ---
 
 ## System Workflow
 
+### Image Upload Pipeline
+
 1. User uploads an image.
 2. OpenCV detects faces within the image.
 3. Each detected face is extracted and preprocessed.
-4. The trained MobileNetV2 model performs mask classification.
+4. MobileNetV2 performs mask classification.
 5. The system labels each face as:
-   - Mask
-   - No Mask
-6. The processed image with predictions is displayed to the user.
+
+   * Mask
+   * No Mask
+6. The processed image is displayed with predictions.
+
+### Live Webcam Pipeline
+
+1. User grants webcam access.
+2. Browser video stream is captured through Streamlit WebRTC.
+3. OpenCV performs face detection on each frame.
+4. MobileNetV2 classifies detected faces.
+5. Results are displayed in real-time with confidence scores.
 
 ---
 
@@ -81,6 +117,7 @@ The application supports both single-face and multi-face detection and provides 
 face-mask-detection/
 │
 ├── streamlit_app.py
+├── streamlit_live.py
 ├── app.py
 ├── detect_mask_video.py
 ├── mask_detector.h5
@@ -90,6 +127,8 @@ face-mask-detection/
 ├── face_detector/
 │   ├── deploy.prototxt
 │   └── res10_300x300_ssd_iter_140000.caffemodel
+│
+├── screenshots/
 │
 └── README.md
 ```
@@ -118,7 +157,9 @@ conda activate maskdetect
 pip install -r requirements.txt
 ```
 
-### Run the Application
+---
+
+## Run Image Upload Version
 
 ```bash
 streamlit run streamlit_app.py
@@ -126,62 +167,81 @@ streamlit run streamlit_app.py
 
 ---
 
+## Run Live Webcam Version
+
+```bash
+streamlit run streamlit_live.py
+```
+
+---
+
 ## Model Information
 
-| Parameter | Value |
-|------------|---------|
-| Model | MobileNetV2 |
-| Framework | TensorFlow / Keras |
-| Task | Face Mask Classification |
-| Classes | Mask, No Mask |
+| Parameter | Value                    |
+| --------- | ------------------------ |
+| Model     | MobileNetV2              |
+| Framework | TensorFlow / Keras       |
+| Task      | Face Mask Classification |
+| Classes   | Mask, No Mask            |
 
 ---
 
 ## Sample Use Cases
 
-- Public safety monitoring
-- Educational demonstrations of computer vision
-- Deep learning portfolio project
-- Face mask compliance analysis
+* Public safety monitoring
+* Educational demonstrations of computer vision
+* Deep learning portfolio project
+* Face mask compliance analysis
+* Real-time webcam-based detection systems
 
 ---
 
 ## Skills Demonstrated
 
-- Deep Learning
-- Computer Vision
-- Image Processing
-- TensorFlow
-- Keras
-- OpenCV
-- Streamlit
-- Git and GitHub
-- Model Deployment
-- Web Application Development
+* Deep Learning
+* Computer Vision
+* Image Processing
+* TensorFlow
+* Keras
+* OpenCV
+* MobileNetV2
+* Streamlit
+* Streamlit WebRTC
+* Git and GitHub
+* Model Deployment
+* Web Application Development
+
+---
+
+## Screenshots
+
+### Mask Detection Result 1
+
+![Mask Detection Result 1](screenshots/mask_detection_result%20\(1\).jpg)
+
+### Mask Detection Result 2
+
+![Mask Detection Result 2](screenshots/mask_detection_result%20\(2\).jpg)
+
+### Mask Detection Result 3
+
+![Mask Detection Result 3](screenshots/mask_detection_result%20\(3\).jpg)
 
 ---
 
 ## Future Enhancements
 
-- Real-time webcam detection
-- Video file analysis
-- Improved user interface
-- Detection statistics dashboard
-- Mobile-responsive design
-- Performance optimization
+* Video file analysis
+* Detection analytics dashboard
+* YOLO-based face detection
+* Face recognition integration
+* Attendance monitoring system
+* Mobile-responsive UI improvements
+* Docker containerization
 
 ---
-## Screenshots
 
-### Mask Detection Result 1
 
-![Mask Detection Result 1](screenshots/mask_detection_result%20(1).jpg)
 
-### Mask Detection Result 2
 
-![Mask Detection Result 2](screenshots/mask_detection_result%20(2).jpg)
-
-### Mask Detection Result 3
-
-![Mask Detection Result 3](screenshots/mask_detection_result%20(3).jpg)
-
+LinkedIn: https://linkedin.com/in/abinavdev
