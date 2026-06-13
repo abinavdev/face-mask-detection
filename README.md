@@ -4,13 +4,7 @@ A deep learning-based Face Mask Detection application that identifies whether a 
 
 ## Live Applications
 
-### Image Upload Detection
-
-https://face-mask-detection-sobtc646yq4rrjkvevpax5.streamlit.app/
-
-### Live Webcam Detection
-
-https://face-mask-detection-fvfhn49dmxaytbdouwujzg.streamlit.app/
+https://face-mask-detection-ipzcpqfzegbxzowxghz8xx.streamlit.app/
 
 ## Repository
 
