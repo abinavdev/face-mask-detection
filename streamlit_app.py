@@ -16,7 +16,7 @@ import threading
 # PAGE CONFIGURATION & METADATA
 # --------------------------------------------------
 st.set_page_config(
-    page_title="GuardianAI - Face Mask Auditing Platform"
+    page_title="GuardianAI - Face Mask Auditing Platform",
     layout="wide",
     initial_sidebar_state="expanded"
 )
