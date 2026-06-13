@@ -1,10 +1,16 @@
 # Face Mask Detection System
 
-A deep learning-based Face Mask Detection application that identifies whether a person is wearing a face mask using both uploaded images and real-time webcam streams. The project uses OpenCV for face detection, TensorFlow/Keras for classification, and Streamlit for deployment.
+A production-ready AI-powered Face Mask Detection System built using Deep Learning, Computer Vision, and Streamlit.
 
-## Live Applications
+The application detects whether individuals are wearing face masks from uploaded images and live webcam streams using OpenCV and a MobileNetV2-based TensorFlow model. The system supports multiple face detection, real-time monitoring, interactive analytics, and a modern web-based interface.
+
+---
+
+## Live Demo
 
 https://face-mask-detection-ipzcpqfzegbxzowxghz8xx.streamlit.app/
+
+---
 
 ## Repository
 
@@ -14,29 +20,54 @@ https://github.com/abinavdev/face-mask-detection
 
 ## Overview
 
-This project combines computer vision and deep learning techniques to detect faces and classify each detected face as either:
+This project combines Computer Vision and Deep Learning techniques to detect faces and classify each detected face as either:
 
 * Mask
 * No Mask
 
-The system supports both:
+The application supports:
 
 * Image Upload Detection
 * Real-Time Webcam Detection
+* Interactive Analytics Dashboard
+* System Monitoring Dashboard
 
-It can detect multiple faces simultaneously and provides confidence scores for every prediction.
+The system can detect multiple faces simultaneously and provides confidence scores for every prediction.
+
+---
+
+## Key Highlights
+
+* Developed a Deep Learning-based Face Mask Detection System using MobileNetV2 and TensorFlow.
+* Implemented face detection using OpenCV DNN and confidence-based mask classification.
+* Built a modern multi-page Streamlit application with dashboard, analytics, image upload, and live webcam detection.
+* Integrated browser webcam streaming using Streamlit WebRTC.
+* Created interactive analytics dashboards using Plotly.
+* Deployed the application on Streamlit Cloud.
+* Managed version control and deployment using Git and GitHub.
 
 ---
 
 ## Features
 
+### Dashboard
+
+* Modern AI-inspired user interface
+* Real-time platform status monitoring
+* Detection statistics overview
+* Model information panel
+* System health indicators
+* Interactive analytics widgets
+
 ### Image Upload Detection
 
-* Upload image files for analysis
+* Drag-and-drop image upload
 * Face detection using OpenCV DNN
 * Mask / No Mask classification
 * Multiple face detection support
-* Confidence score display
+* Confidence score visualization
+* Detection summary statistics
+* Processed image preview
 * Download processed image
 
 ### Live Webcam Detection
@@ -47,6 +78,15 @@ It can detect multiple faces simultaneously and provides confidence scores for e
 * Confidence score display
 * Multiple face detection support
 * Streamlit WebRTC integration
+* Live monitoring interface
+
+### Analytics
+
+* Detection statistics dashboard
+* Interactive Plotly visualizations
+* Compliance metrics monitoring
+* Detection distribution charts
+* Performance monitoring widgets
 
 ---
 
@@ -71,19 +111,40 @@ It can detect multiple faces simultaneously and provides confidence scores for e
 
 * Streamlit
 * Streamlit WebRTC
+* Plotly
+* Streamlit Option Menu
 
 ### Supporting Libraries
 
 * NumPy
+* Pandas
 * Pillow
 * Imutils
 * AV
 
 ---
 
-## System Workflow
+## System Architecture
 
-### Image Upload Pipeline
+```text
+Image / Webcam Input
+          ↓
+Face Detection (OpenCV DNN)
+          ↓
+Face Extraction
+          ↓
+Image Preprocessing
+          ↓
+MobileNetV2 Classification
+          ↓
+Mask / No Mask Prediction
+          ↓
+Visualization & Analytics
+```
+
+---
+
+## Image Upload Workflow
 
 1. User uploads an image.
 2. OpenCV detects faces within the image.
@@ -93,15 +154,28 @@ It can detect multiple faces simultaneously and provides confidence scores for e
 
    * Mask
    * No Mask
-6. The processed image is displayed with predictions.
+6. Results are displayed with confidence scores and visual overlays.
 
-### Live Webcam Pipeline
+---
+
+## Live Webcam Workflow
 
 1. User grants webcam access.
-2. Browser video stream is captured through Streamlit WebRTC.
+2. Browser video stream is captured using Streamlit WebRTC.
 3. OpenCV performs face detection on each frame.
 4. MobileNetV2 classifies detected faces.
-5. Results are displayed in real-time with confidence scores.
+5. Results are displayed in real time with confidence scores.
+
+---
+
+## Model Information
+
+| Parameter | Value                    |
+| --------- | ------------------------ |
+| Model     | MobileNetV2              |
+| Framework | TensorFlow / Keras       |
+| Task      | Face Mask Classification |
+| Classes   | Mask, No Mask            |
 
 ---
 
@@ -111,7 +185,6 @@ It can detect multiple faces simultaneously and provides confidence scores for e
 face-mask-detection/
 │
 ├── streamlit_app.py
-├── streamlit_live.py
 ├── app.py
 ├── detect_mask_video.py
 ├── mask_detector.h5
@@ -123,6 +196,9 @@ face-mask-detection/
 │   └── res10_300x300_ssd_iter_140000.caffemodel
 │
 ├── screenshots/
+│
+├── .streamlit/
+│   └── config.toml
 │
 └── README.md
 ```
@@ -153,7 +229,7 @@ pip install -r requirements.txt
 
 ---
 
-## Run Image Upload Version
+## Run the Application
 
 ```bash
 streamlit run streamlit_app.py
@@ -161,32 +237,24 @@ streamlit run streamlit_app.py
 
 ---
 
-## Run Live Webcam Version
+## Deployment
 
-```bash
-streamlit run streamlit_live.py
-```
+The application is deployed on Streamlit Cloud.
 
----
+Live URL:
 
-## Model Information
-
-| Parameter | Value                    |
-| --------- | ------------------------ |
-| Model     | MobileNetV2              |
-| Framework | TensorFlow / Keras       |
-| Task      | Face Mask Classification |
-| Classes   | Mask, No Mask            |
+https://face-mask-detection-ipzcpqfzegbxzowxghz8xx.streamlit.app/
 
 ---
 
 ## Sample Use Cases
 
 * Public safety monitoring
-* Educational demonstrations of computer vision
-* Deep learning portfolio project
+* Educational demonstrations of Computer Vision
+* Deep Learning portfolio project
 * Face mask compliance analysis
-* Real-time webcam-based detection systems
+* Real-time webcam monitoring systems
+* AI-powered surveillance applications
 
 ---
 
@@ -201,6 +269,8 @@ streamlit run streamlit_live.py
 * MobileNetV2
 * Streamlit
 * Streamlit WebRTC
+* Plotly
+* Data Visualization
 * Git and GitHub
 * Model Deployment
 * Web Application Development
